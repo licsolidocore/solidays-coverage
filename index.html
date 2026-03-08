@@ -174,6 +174,51 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 /* TOAST */
 .toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(70px);background:var(--green-dk);border:2px solid var(--green-md);color:#fff;padding:9px 18px;border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:700;transition:transform .25s cubic-bezier(.17,.67,.42,1.3);z-index:999;pointer-events:none;white-space:nowrap;letter-spacing:.3px;}
 .toast.show{transform:translateX(-50%) translateY(0);}
+
+/* MOBILE */
+@media(max-width:680px){
+  .topbar{padding:12px 16px;}
+  .tb-title{font-size:16px;}
+  .sync-bar{padding:5px 16px;}
+  .stats-strip{padding:7px 16px;gap:12px;}
+  .sstat-n{font-size:16px;}
+  .my-btn{font-size:10px;padding:5px 10px;}
+
+  /* Form stacks vertically */
+  .signup-form{margin:12px 12px 0;padding:14px 14px 16px;}
+  .sf-row{flex-direction:column;gap:8px;}
+  .sf-field.sf-name input,
+  .sf-field.sf-email input,
+  .sf-field.sf-day select,
+  .sf-field.sf-time input{width:100%;}
+  .sf-submit{width:100%;padding:11px;}
+
+  /* Schedule: hide crew column, make time narrower */
+  .sheet-outer{padding:12px 12px 60px;overflow-x:auto;}
+  .sheet-wrap{min-width:0;}
+  :root{
+    --col-time:72px;
+    --col-class:minmax(140px,1fr);
+    --col-crew:0px;
+    --col-sol:140px;
+  }
+  .day-title-row{grid-template-columns:var(--col-time) var(--col-class) 0 var(--col-sol);}
+  .col-header-row{grid-template-columns:var(--col-time) var(--col-class) 0 var(--col-sol);}
+  .ch-crew,.cell-crew{display:none;}
+  .day-title-cell:nth-child(3){display:none;}
+  .cc-name{font-size:11px;}
+  .cc-coach{font-size:10px;}
+  .ct-start{font-size:10px;}
+  .ct-end{font-size:9px;}
+  .sol-card .sw-who{font-size:11px;}
+  .sol-card .sw-time{font-size:9px;}
+  .day-name{font-size:14px;}
+
+  /* Entries list */
+  .sf-entry{flex-wrap:wrap;gap:4px;}
+  .se-name{min-width:unset;}
+  .se-day{min-width:unset;}
+}
 </style>
 </head>
 <body>
